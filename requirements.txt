@@ -1,2 +1,4 @@
 django
 djangorestframework
+Pillow
+whitenoise
