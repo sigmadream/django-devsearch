@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
@@ -75,3 +76,11 @@ def user_profile(request, pk):
 
     context = {'profile': profile, 'top_skills': top_skills, 'other_skills': other_skills}
     return render(request, 'users/user-profile.html', context)
+
+
+@login_required(login_url='login')
+def user_account(request):
+    profile = request.user.profile
+
+    context = {'profile': profile}
+    return render(request, 'users/account.html', context)
