@@ -472,7 +472,7 @@ img {
     font-style: italic;
 }
 
-.project--rating {
+.project__rating {
     margin-bottom: 1.6em;
     margin-top: .5em;
 }
@@ -512,11 +512,11 @@ img {
 
 /*========== Projects ==========*/
 
-.project__thumbnail {
-    height: 25rem;
-    object-fit: cover;
-    object-position: top center;
-}
+/*.project__thumbnail {*/
+/*    height: 25rem;*/
+/*    object-fit: cover;*/
+/*    object-position: top center;*/
+/*}*/
 
 .project__title {
     font-size: 2rem;

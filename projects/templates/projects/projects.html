@@ -9,7 +9,6 @@
                 <div class="hero-section__box">
                     <h2>Search for <span>Projects</span></h2>
                 </div>
-
                 <div class="hero-section__search">
                     <form id='searchForm' class="form" action="{% url 'projects' %}" method="get">
                         <div class="form__field">
@@ -17,7 +16,6 @@
                             <input class="input input--text" id="formInput#search" type="text" name="search_query"
                                    placeholder="Search by Project Title" value="{{ search_query }}"/>
                         </div>
-
                         <input class="btn btn--sub btn--lg" type="submit" value="Search"/>
                     </form>
                 </div>
@@ -29,7 +27,7 @@
                 <div class="grid grid--three">
                     {% for project in projects %}
                         <div class="column">
-                            <div class="card project">
+                            <div class="card">
                                 <a href="{% url 'project' project.id %}" class="project">
                                     <img class="project__thumbnail" src="{{ project.image_url }}"
                                          alt="project thumbnail"/>
@@ -38,7 +36,7 @@
                                         <p><a class="project__author" href="{% url 'user-profile' project.owner.id %}">By
                                             {{ project.owner.name }}</a>
                                         </p>
-                                        <p class="project--rating">
+                                        <p class="project__rating">
                                             <span style="font-weight: bold;">{{ project.vote_ratio }}%</span> Positive
                                             Feedback ({{ project.vote_total }})
                                             Vote{{ project.vote_total|pluralize:"s" }}
